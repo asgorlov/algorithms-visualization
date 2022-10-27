@@ -29,7 +29,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "precommit": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
@@ -50,5 +51,17 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prop-types": "^15.8.1"
+  },
+  "lint-staged": {
+    "*.{ts, tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
