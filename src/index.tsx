@@ -1,15 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./static/styles/index.less";
-import App from "./App";
+import "./static/styles/styles.less";
+import "./localization/i18n";
 import reportWebVitals from "./reportWebVitals";
+import MainPageContainer from "./components/main-page/main-page.container";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <MainPageContainer />
+    </Provider>
   </React.StrictMode>
 );
 
