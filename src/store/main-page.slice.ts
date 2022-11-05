@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import { SortTypes } from "../constants/sort-types.enum";
-import { AlgorithmViewState } from "./algorithm-view.slice";
 
 export interface MainPageState {
   selectedSort: SortTypes | null;

@@ -22,7 +22,7 @@ export const algorithmViewSlice = createSlice({
       action: PayloadAction<ChangedStripArrayElementModel[]>
     ) {
       const changedElements = action.payload;
-      changedElements.map(changedElement => {
+      changedElements.forEach(changedElement => {
         state.stripArray[changedElement.index] = changedElement.element;
       });
     }

@@ -7,6 +7,7 @@ import ACheckbox from "../a-checkbox/a-checkbox.component";
 import { SortTypes } from "../../constants/sort-types.enum";
 import AButton from "../a-button/a-button.component";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
+import clsx from "clsx";
 
 interface MainPageProps {
   isSortSelected: boolean;
@@ -45,11 +46,17 @@ const MainPageComponent: FC<MainPageProps> = ({
             </div>
             <div className="main-page-layout-content__sort-array">
               {Object.entries(SortTypes).map(([key, value]) => {
+                const isChecked = !!selectedSort && selectedSort === key;
                 return (
                   <ACheckbox
                     key={key}
-                    className="main-page-layout-content__sort-array__checkbox"
-                    checked={!!selectedSort && selectedSort === key}
+                    className={clsx(
+                      "main-page-layout-content__sort-array__checkbox",
+                      {
+                        _bold: isChecked
+                      }
+                    )}
+                    checked={isChecked}
                     disabled={!!selectedSort && selectedSort !== key}
                     value={key}
                     onChange={onChangeCheckbox}
