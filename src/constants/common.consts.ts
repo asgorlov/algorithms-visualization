@@ -1,0 +1,2 @@
+export const HEIGHT_STRIP_LIST = 50;
+export const DEFAULT_STRIP_ARRAY_LENGTH = 10;

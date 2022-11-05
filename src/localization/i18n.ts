@@ -4,10 +4,59 @@ import { initReactI18next } from "react-i18next";
 i18n.use(initReactI18next).init({
   resources: {
     ru: {
-      translation: {}
+      translation: {
+        mainPage: {
+          title: "Визуализация алгоритмов",
+          description:
+            "Выберете сортировку, работу которой Вы хотели бы посмотреть."
+        },
+        defaultSelectPlaceholder: "Выберете сортировку",
+        button: {
+          sort: "Сортировать",
+          shuffle: "Перемешать",
+          reset: "Сбросить",
+          submit: "Ок"
+        },
+        sort: {
+          quick: "Быстрая сортировка",
+          merge: "Сортировка слиянием",
+          heap: "Пирамидальная сортировка",
+          bubble: "Пузырьковая сортировка",
+          selection: "Сортировка выбором",
+          insertion: "Сортировка вставками",
+          gnome: "Гномья сортировка",
+          shaker: "Шейкерная сортировка",
+          oddEven: "Чётно-нечётная сортировка",
+          pancake: "Блинная сортировка"
+        }
+      }
     },
     en: {
-      translation: {}
+      translation: {
+        mainPage: {
+          title: "Visualization of algorithms",
+          description: "Select the sort you want to view."
+        },
+        defaultSelectPlaceholder: "Select a sort",
+        button: {
+          sort: "Sort",
+          shuffle: "Shuffle",
+          reset: "Reset",
+          submit: "Ok"
+        },
+        sort: {
+          quick: "Quick Sort",
+          merge: "Merge Sort",
+          heap: "Heap Sort",
+          bubble: "Bubble Sort",
+          selection: "Selection Sort",
+          insertion: "Insertion Sort",
+          gnome: "Gnome Sort",
+          shaker: "Shaker Sort",
+          oddEven: "Odd Even Sort",
+          pancake: "Pancake Sort"
+        }
+      }
     }
   },
   lng: window.navigator.language ? window.navigator.language : "ru-RU",

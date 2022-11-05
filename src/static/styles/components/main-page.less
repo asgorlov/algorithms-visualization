@@ -1,0 +1,49 @@
+@import "src/static/styles/constants";
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-layout {
+    min-width: 512px;
+    align-items: center;
+
+    &-header {
+      font-size: @title-font-size;
+      font-weight: bold;
+
+      &.ant-layout-header {
+        height: auto;
+        line-height: calc(@title-font-size * 2);
+        background: transparent;
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__description {
+        margin-bottom: 8px;
+      }
+
+      &__sort-array {
+        display: flex;
+        flex-direction: column;
+
+        .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+          margin-left: 0;
+        }
+      }
+    }
+    &-footer {
+      display: flex;
+
+      &__btn-reset,
+      &__btn-submit {
+        margin: 0 12px;
+      }
+    }
+  }
+}
