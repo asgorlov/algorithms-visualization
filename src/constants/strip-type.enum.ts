@@ -1,5 +1,5 @@
 export enum StripTypeClass {
   DEFAULT = "",
-  CURRENT = "current",
-  SELECTED = "selected"
+  CURRENT = "_current",
+  SELECTED = "_selected"
 }

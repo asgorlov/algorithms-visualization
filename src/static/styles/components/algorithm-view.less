@@ -1,0 +1,31 @@
+.algorithm-view {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-container {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 50vh;
+    outline: 4px solid #f0f2f5;
+  }
+
+  &-strip {
+    outline: 1px solid #f0f2f5;
+    background: #1890ff;
+
+    &._current {
+      background: #ff1414;
+    }
+
+    &._selected {
+      background: #17a817;
+    }
+  }
+
+  &-description {
+    width: 100%;
+  }
+}
