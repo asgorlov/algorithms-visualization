@@ -1,0 +1,46 @@
+.algorithm-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+
+  &__button-group {
+    &_back,
+    &_reset,
+    &_shuffle,
+    &_sort{
+      margin: 8px 4px;
+    }
+
+    &_back{}
+
+    &_reset{}
+
+    &_shuffle{}
+
+    &_sort{}
+  }
+
+  &__slider-group {
+    display: flex;
+    height: 32px;
+
+    .ant-slider:hover .ant-slider-rail {
+      background-color: #91d5ff7d;
+    }
+
+    .ant-slider-rail {
+      background-color: #1890ff;
+    }
+
+    .ant-slider-track {
+      background-color: #096dd9;
+    }
+
+    &_length,
+    &_delay {
+      outline: rgba(0, 0, 0, 0.1) solid 1px;
+      margin: auto 4px;
+    }
+  }
+}

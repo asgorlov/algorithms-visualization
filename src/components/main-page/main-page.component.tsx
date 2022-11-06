@@ -25,6 +25,9 @@ const MainPageComponent: FC<MainPageProps> = ({
   onClickSubmit
 }) => {
   const { t } = useTranslation();
+  const LazyAlgorithmControls = lazy(
+    () => import("../algorithm-controls/algorithm-controls.container")
+  );
   const LazyAlgorithmView = lazy(
     () => import("../algorithm-view/algorithm-view.container")
   );
@@ -33,6 +36,7 @@ const MainPageComponent: FC<MainPageProps> = ({
     <div className="main-page">
       {isSortSelected ? (
         <Suspense>
+          <LazyAlgorithmControls />
           <LazyAlgorithmView />
         </Suspense>
       ) : (
@@ -74,14 +78,14 @@ const MainPageComponent: FC<MainPageProps> = ({
               onClick={onClickSubmit}
             >
               <CheckOutlined />
-              {t("button.submit") as string}
+              <span>{t("button.submit") as string}</span>
             </AButton>
             <AButton
               className="main-page-layout-footer__btn-reset"
               onClick={onClickReset}
             >
               <DeleteOutlined />
-              {t("button.reset") as string}
+              <span>{t("button.reset") as string}</span>
             </AButton>
           </Footer>
         </Layout>

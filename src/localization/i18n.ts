@@ -10,8 +10,12 @@ i18n.use(initReactI18next).init({
           description:
             "Выберете сортировку, работу которой Вы хотели бы посмотреть."
         },
-        defaultSelectPlaceholder: "Выберете сортировку",
+        slider: {
+          delay: "Время выполнения одного шага в секундах",
+          length: "Размер массива для сортировки"
+        },
         button: {
+          back: "Назад",
           sort: "Сортировать",
           shuffle: "Перемешать",
           reset: "Сбросить",
@@ -37,8 +41,12 @@ i18n.use(initReactI18next).init({
           title: "Visualization of algorithms",
           description: "Select the sort you want to view."
         },
-        defaultSelectPlaceholder: "Select a sort",
+        slider: {
+          delay: "Step delay in seconds",
+          length: "Sorting array length"
+        },
         button: {
+          back: "Back",
           sort: "Sort",
           shuffle: "Shuffle",
           reset: "Reset",

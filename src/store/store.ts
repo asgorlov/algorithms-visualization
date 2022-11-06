@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import algorithmViewReducer from "./algorithm-view.slice";
+import controlsReducer from "./controls.slice";
 import mainPageReducer from "./main-page.slice";
 
 export const store = configureStore({
   reducer: {
     mainPage: mainPageReducer,
-    algorithmView: algorithmViewReducer
+    controls: controlsReducer
   }
 });
 export type RootState = ReturnType<typeof store.getState>;
