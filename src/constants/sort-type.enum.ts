@@ -1,4 +1,4 @@
-export enum SortTypes {
+export enum SortType {
   QUICK = "quick",
   MERGE = "merge",
   HEAP = "heap",

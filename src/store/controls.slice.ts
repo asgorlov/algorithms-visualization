@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import {
-  DEFAULT_SORT_STEP_DELAY,
+  DEFAULT_SORT_STEP_DELAY_IN_SECONDS,
   DEFAULT_STRIP_ARRAY_LENGTH
 } from "../constants/common.consts";
 
@@ -13,7 +13,7 @@ export interface ControlsState {
 }
 
 const initialState: ControlsState = {
-  stepDelay: DEFAULT_SORT_STEP_DELAY,
+  stepDelay: DEFAULT_SORT_STEP_DELAY_IN_SECONDS,
   arrayLength: DEFAULT_STRIP_ARRAY_LENGTH,
   isSortButtonPushed: false,
   isShuffleButtonPushed: false

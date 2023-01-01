@@ -4,7 +4,3 @@ export interface StripModel {
   height?: number;
   typeClass?: StripTypeClass;
 }
-
-export interface ChangedStripModel extends StripModel {
-  index: number;
-}

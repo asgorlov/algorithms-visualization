@@ -2,7 +2,7 @@ import React, { FC, useEffect } from "react";
 import AlgorithmViewComponent from "./algorithm-view.component";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  createStripArray,
+  createArray,
   selectStripArray
 } from "../../store/algorithm-view.slice";
 import {
@@ -10,6 +10,7 @@ import {
   selectShuffleButtonPushed,
   selectSortButtonPushed
 } from "../../store/controls.slice";
+import { RANDOM_SORT_ACTION } from "../../constants/common.consts";
 
 const AlgorithmViewContainer: FC = () => {
   const dispatch = useDispatch();
@@ -20,13 +21,14 @@ const AlgorithmViewContainer: FC = () => {
   const isShuffleButtonPushed = useSelector(selectShuffleButtonPushed);
 
   useEffect(() => {
-    dispatch(createStripArray(stripArrayLength));
+    dispatch(createArray(stripArrayLength));
   }, [dispatch, stripArrayLength]);
 
   useEffect(() => {
     if (isShuffleButtonPushed) {
+      dispatch({ type: RANDOM_SORT_ACTION });
     }
-  }, [isShuffleButtonPushed, stripArray]);
+  }, [isShuffleButtonPushed, dispatch]);
 
   useEffect(() => {
     if (isSortButtonPushed) {

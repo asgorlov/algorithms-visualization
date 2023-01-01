@@ -1,9 +1,12 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC, useCallback } from "react";
 import AlgorithmControlsComponent from "./algorithm-controls.component";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsSortSelected } from "../../store/main-page.slice";
 import {
-  DEFAULT_SORT_STEP_DELAY,
+  setIsSortSelected,
+  setSelectedSort
+} from "../../store/main-page.slice";
+import {
+  DEFAULT_SORT_STEP_DELAY_IN_SECONDS,
   DEFAULT_STRIP_ARRAY_LENGTH
 } from "../../constants/common.consts";
 import {
@@ -16,6 +19,7 @@ import {
   setSortButtonPushed,
   setStepDelay
 } from "../../store/controls.slice";
+import { createArray } from "../../store/algorithm-view.slice";
 
 const AlgorithmControlsContainer: FC = () => {
   const dispatch = useDispatch();
@@ -25,14 +29,18 @@ const AlgorithmControlsContainer: FC = () => {
   const isSortButtonPushed = useSelector(selectSortButtonPushed);
   const isShuffleButtonPushed = useSelector(selectShuffleButtonPushed);
 
-  const handleClickBack = useCallback(() => {
-    handleClickReset();
-    dispatch(setIsSortSelected(false));
-  }, [dispatch]);
-
   const handleClickReset = useCallback(() => {
-    dispatch(setArrayLength(DEFAULT_STRIP_ARRAY_LENGTH));
-    dispatch(setStepDelay(DEFAULT_SORT_STEP_DELAY));
+    dispatch(setStepDelay(DEFAULT_SORT_STEP_DELAY_IN_SECONDS));
+    if (length !== DEFAULT_STRIP_ARRAY_LENGTH) {
+      dispatch(setArrayLength(DEFAULT_STRIP_ARRAY_LENGTH));
+    } else {
+      dispatch(createArray(DEFAULT_STRIP_ARRAY_LENGTH));
+    }
+  }, [dispatch, length]);
+
+  const handleClickBack = useCallback(() => {
+    dispatch(setIsSortSelected(false));
+    dispatch(setSelectedSort(null));
   }, [dispatch]);
 
   const handleClickShuffle = useCallback(() => {
