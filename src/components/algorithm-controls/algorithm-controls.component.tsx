@@ -48,7 +48,6 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
         <Popover content={t("button.back") as string}>
           <AButton
             className="algorithm-controls__button-group_back"
-            disabled={isShuffleButtonPushed || isSortButtonPushed}
             onClick={onClickBack}
           >
             <ArrowLeftOutlined />

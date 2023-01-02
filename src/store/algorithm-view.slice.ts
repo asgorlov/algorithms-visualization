@@ -4,13 +4,16 @@ import { RootState } from "./store";
 import { StripModel } from "../models/strip.model";
 import { StripTypeClass } from "../constants/strip-type.enum";
 import { ArrayIndexesToChangeModel } from "../models/array-indexes-to-change.model";
+import { SavedAlgorithmDataModel } from "../models/saved-algorithm-data.model";
 
 export interface AlgorithmViewState {
   stripArray: StripModel[];
+  savedAlgorithmData: SavedAlgorithmDataModel | null;
 }
 
 const initialState: AlgorithmViewState = {
-  stripArray: []
+  stripArray: [],
+  savedAlgorithmData: null
 };
 
 export const algorithmViewSlice = createSlice({
@@ -57,6 +60,12 @@ export const algorithmViewSlice = createSlice({
         array[currentIndex]
       ];
     },
+    setSavedStripArrayIndex(
+      state: AlgorithmViewState,
+      action: PayloadAction<SavedAlgorithmDataModel>
+    ) {
+      state.savedAlgorithmData = action.payload;
+    },
     createArray(state: AlgorithmViewState, action: PayloadAction<number>) {
       state.stripArray = initStripArray(action.payload);
     }
@@ -66,11 +75,15 @@ export const algorithmViewSlice = createSlice({
 export const selectStripArray = (state: RootState) => {
   return state.algorithmView.stripArray;
 };
+export const selectSavedAlgorithmData = (state: RootState) => {
+  return state.algorithmView.savedAlgorithmData;
+};
 
 export const {
   changeArrayElementsColor,
   resetArrayElementsColor,
   swapArrayElements,
+  setSavedStripArrayIndex,
   createArray
 } = algorithmViewSlice.actions;
 
