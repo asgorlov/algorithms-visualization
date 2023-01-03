@@ -1,14 +1,18 @@
 import React, { FC } from "react";
 import { StripModel } from "../../models/strip.model";
 import StripComponent from "./strip/strip.component";
+import AlgorithmDescriptionComponent from "./algorithm-description/algorithm-description.component";
+import { SortTypes } from "../../constants/sort-type.enum";
 
 interface AlgorithmViewProps {
   stripArray: StripModel[];
+  selectedSort: SortTypes;
   animationTime: number;
 }
 
 const AlgorithmViewComponent: FC<AlgorithmViewProps> = ({
   stripArray,
+  selectedSort,
   animationTime
 }) => {
   return (
@@ -26,7 +30,7 @@ const AlgorithmViewComponent: FC<AlgorithmViewProps> = ({
             );
           })}
         </div>
-        <div className="algorithm-view-description">Description</div>
+        <AlgorithmDescriptionComponent selectedSort={selectedSort} />
       </div>
     </div>
   );

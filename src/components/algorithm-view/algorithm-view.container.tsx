@@ -62,6 +62,7 @@ const AlgorithmViewContainer: FC = () => {
   return (
     <AlgorithmViewComponent
       stripArray={stripArray}
+      selectedSort={selectedSort}
       animationTime={animationTime}
     />
   );
