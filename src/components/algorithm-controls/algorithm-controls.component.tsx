@@ -10,10 +10,7 @@ import {
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { Popover } from "antd";
-import {
-  DEFAULT_SORT_STEP_DELAY_IN_SECONDS,
-  DEFAULT_STRIP_ARRAY_LENGTH
-} from "../../constants/common.consts";
+import { DEFAULT_STRIP_ARRAY_LENGTH } from "../../constants/common.consts";
 
 interface AlgorithmControlsProps {
   onClickBack: () => void;
@@ -106,8 +103,9 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
               disabled={isShuffleButtonPushed || isSortButtonPushed}
               onChange={onChangeDelay}
               value={sortDelay}
-              min={DEFAULT_SORT_STEP_DELAY_IN_SECONDS}
-              max={5}
+              min={0.5}
+              max={3}
+              step={0.5}
             />
           </div>
         </Popover>

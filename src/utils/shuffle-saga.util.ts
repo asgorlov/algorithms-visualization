@@ -6,7 +6,7 @@ import {
   selectStripArray
 } from "../store/algorithm-view.slice";
 import { StripModel } from "../models/strip.model";
-import { SHUFFLE_DELAY_IN_MILLISECONDS } from "../constants/common.consts";
+import { SHUFFLE_DELAY_IN_SECONDS } from "../constants/common.consts";
 import { ActionType } from "../constants/action-type.enum";
 import { selectIsSortSelected } from "../store/main-page.slice";
 import { selectShuffleButtonPushed } from "../store/controls.slice";
@@ -17,7 +17,7 @@ function* shuffleSaga() {
     selectSavedAlgorithmData
   );
   const array: StripModel[] = Array.from(yield select(selectStripArray));
-  const stepDelay = SHUFFLE_DELAY_IN_MILLISECONDS / array.length;
+  const stepDelay = (SHUFFLE_DELAY_IN_SECONDS * 1000) / array.length;
   const savedI =
     savedData?.action === ActionType.SHUFFLE ? savedData.indexes[0] : 0;
 

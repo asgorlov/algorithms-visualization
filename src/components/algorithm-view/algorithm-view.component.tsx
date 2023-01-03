@@ -4,9 +4,13 @@ import StripComponent from "./strip/strip.component";
 
 interface AlgorithmViewProps {
   stripArray: StripModel[];
+  animationTime: number;
 }
 
-const AlgorithmViewComponent: FC<AlgorithmViewProps> = ({ stripArray }) => {
+const AlgorithmViewComponent: FC<AlgorithmViewProps> = ({
+  stripArray,
+  animationTime
+}) => {
   return (
     <div className="algorithm-view">
       <div className="algorithm-view-wrapper">
@@ -16,6 +20,7 @@ const AlgorithmViewComponent: FC<AlgorithmViewProps> = ({ stripArray }) => {
               <StripComponent
                 key={`strip-${index}`}
                 className={"algorithm-view-strip"}
+                animationTime={animationTime}
                 {...strip}
               />
             );
