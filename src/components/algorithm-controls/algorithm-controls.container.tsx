@@ -19,7 +19,10 @@ import {
   setSortButtonPushed,
   setStepDelay
 } from "../../store/controls.slice";
-import { createArray } from "../../store/algorithm-view.slice";
+import {
+  createStripArray,
+  savedAlgorithmData
+} from "../../store/algorithm-view.slice";
 
 const AlgorithmControlsContainer: FC = () => {
   const dispatch = useDispatch();
@@ -31,16 +34,21 @@ const AlgorithmControlsContainer: FC = () => {
 
   const handleClickReset = useCallback(() => {
     dispatch(setStepDelay(DEFAULT_SORT_STEP_DELAY_IN_SECONDS));
+    dispatch(savedAlgorithmData(null));
+
     if (length !== DEFAULT_STRIP_ARRAY_LENGTH) {
       dispatch(setArrayLength(DEFAULT_STRIP_ARRAY_LENGTH));
     } else {
-      dispatch(createArray(DEFAULT_STRIP_ARRAY_LENGTH));
+      dispatch(createStripArray(DEFAULT_STRIP_ARRAY_LENGTH));
     }
   }, [dispatch, length]);
 
   const handleClickBack = useCallback(() => {
     dispatch(setIsSortSelected(false));
     dispatch(setSelectedSort(null));
+    dispatch(savedAlgorithmData(null));
+    dispatch(setSortButtonPushed(false));
+    dispatch(setShuffleButtonPushed(false));
   }, [dispatch]);
 
   const handleClickShuffle = useCallback(() => {

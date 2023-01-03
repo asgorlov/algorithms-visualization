@@ -3,7 +3,7 @@ import algorithmView from "./algorithm-view.slice";
 import controlsReducer from "./controls.slice";
 import mainPageReducer from "./main-page.slice";
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "../utils/saga.util";
+import rootSaga from "../utils/root-saga.util";
 
 const initStore = () => {
   const sagaMiddleware = createSagaMiddleware();

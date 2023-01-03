@@ -3,7 +3,7 @@ import { initStripArray } from "../utils/algorithms.util";
 import { RootState } from "./store";
 import { StripModel } from "../models/strip.model";
 import { StripTypeClass } from "../constants/strip-type.enum";
-import { ArrayIndexesToChangeModel } from "../models/array-indexes-to-change.model";
+import { ArrayIndexToChangeModel } from "../models/array-index-to-change.model";
 import { SavedAlgorithmDataModel } from "../models/saved-algorithm-data.model";
 
 export interface AlgorithmViewState {
@@ -22,7 +22,7 @@ export const algorithmViewSlice = createSlice({
   reducers: {
     changeArrayElementsColor: (
       state: AlgorithmViewState,
-      action: PayloadAction<ArrayIndexesToChangeModel>
+      action: PayloadAction<ArrayIndexToChangeModel>
     ) => {
       const array = state.stripArray;
       const currentIndex = action.payload.current;
@@ -33,7 +33,7 @@ export const algorithmViewSlice = createSlice({
     },
     resetArrayElementsColor: (
       state: AlgorithmViewState,
-      action: PayloadAction<ArrayIndexesToChangeModel>
+      action: PayloadAction<ArrayIndexToChangeModel>
     ) => {
       const array = state.stripArray;
       const currentIndex = action.payload.current;
@@ -44,7 +44,7 @@ export const algorithmViewSlice = createSlice({
     },
     swapArrayElements: (
       state: AlgorithmViewState,
-      action: PayloadAction<ArrayIndexesToChangeModel>
+      action: PayloadAction<ArrayIndexToChangeModel>
     ) => {
       const array = state.stripArray;
       const currentIndex = action.payload.current;
@@ -60,13 +60,13 @@ export const algorithmViewSlice = createSlice({
         array[currentIndex]
       ];
     },
-    setSavedStripArrayIndex(
+    savedAlgorithmData(
       state: AlgorithmViewState,
       action: PayloadAction<SavedAlgorithmDataModel>
     ) {
       state.savedAlgorithmData = action.payload;
     },
-    createArray(state: AlgorithmViewState, action: PayloadAction<number>) {
+    createStripArray(state: AlgorithmViewState, action: PayloadAction<number>) {
       state.stripArray = initStripArray(action.payload);
     }
   }
@@ -83,8 +83,8 @@ export const {
   changeArrayElementsColor,
   resetArrayElementsColor,
   swapArrayElements,
-  setSavedStripArrayIndex,
-  createArray
+  savedAlgorithmData,
+  createStripArray
 } = algorithmViewSlice.actions;
 
 export default algorithmViewSlice.reducer;

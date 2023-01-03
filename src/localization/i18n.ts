@@ -22,16 +22,36 @@ i18n.use(initReactI18next).init({
           submit: "Ок"
         },
         sort: {
-          quick: "Быстрая сортировка",
-          merge: "Сортировка слиянием",
-          heap: "Пирамидальная сортировка",
-          bubble: "Пузырьковая сортировка",
-          selection: "Сортировка выбором",
-          insertion: "Сортировка вставками",
-          gnome: "Гномья сортировка",
-          shaker: "Шейкерная сортировка",
-          oddEven: "Чётно-нечётная сортировка",
-          pancake: "Блинная сортировка"
+          quick: {
+            title: "Быстрая сортировка"
+          },
+          merge: {
+            title: "Сортировка слиянием"
+          },
+          heap: {
+            title: "Пирамидальная сортировка"
+          },
+          bubble: {
+            title: "Пузырьковая сортировка"
+          },
+          selection: {
+            title: "Сортировка выбором"
+          },
+          insertion: {
+            title: "Сортировка вставками"
+          },
+          gnome: {
+            title: "Гномья сортировка"
+          },
+          shaker: {
+            title: "Шейкерная сортировка"
+          },
+          oddEven: {
+            title: "Чётно-нечётная сортировка"
+          },
+          pancake: {
+            title: "Блинная сортировка"
+          }
         }
       }
     },
@@ -53,16 +73,36 @@ i18n.use(initReactI18next).init({
           submit: "Ok"
         },
         sort: {
-          quick: "Quick Sort",
-          merge: "Merge Sort",
-          heap: "Heap Sort",
-          bubble: "Bubble Sort",
-          selection: "Selection Sort",
-          insertion: "Insertion Sort",
-          gnome: "Gnome Sort",
-          shaker: "Shaker Sort",
-          oddEven: "Odd Even Sort",
-          pancake: "Pancake Sort"
+          quick: {
+            title: "Quick Sort"
+          },
+          merge: {
+            title: "Merge Sort"
+          },
+          heap: {
+            title: "Heap Sort"
+          },
+          bubble: {
+            title: "Bubble Sort"
+          },
+          selection: {
+            title: "Selection Sort"
+          },
+          insertion: {
+            title: "Insertion Sort"
+          },
+          gnome: {
+            title: "Gnome Sort"
+          },
+          shaker: {
+            title: "Shaker Sort"
+          },
+          oddEven: {
+            title: "Odd Even Sort"
+          },
+          pancake: {
+            title: "Pancake Sort"
+          }
         }
       }
     }

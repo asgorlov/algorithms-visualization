@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
-import { SortType } from "../constants/sort-type.enum";
+import { SortTypes } from "../constants/sort-type.enum";
 
 export interface MainPageState {
-  selectedSort: SortType | null;
+  selectedSort: SortTypes | null;
   isSortSelected: boolean;
 }
 
@@ -16,7 +16,7 @@ export const mainPageSlice = createSlice({
   name: "mainPage",
   initialState,
   reducers: {
-    setSelectedSort(state: MainPageState, action: PayloadAction<SortType>) {
+    setSelectedSort(state: MainPageState, action: PayloadAction<SortTypes>) {
       state.selectedSort = action.payload;
     },
     setIsSortSelected(state: MainPageState, action: PayloadAction<boolean>) {

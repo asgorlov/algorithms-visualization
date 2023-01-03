@@ -1,4 +1,4 @@
 export enum ActionType {
   SHUFFLE = "shuffle",
-  SORT = "sort"
+  BUBBLE_SORT = "bubbleSort"
 }

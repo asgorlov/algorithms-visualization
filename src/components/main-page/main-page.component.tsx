@@ -4,14 +4,14 @@ import { Layout } from "antd";
 import { DeleteOutlined, CheckOutlined } from "@ant-design/icons";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import ACheckbox from "../a-checkbox/a-checkbox.component";
-import { SortType } from "../../constants/sort-type.enum";
+import { SortTypes } from "../../constants/sort-type.enum";
 import AButton from "../a-button/a-button.component";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import clsx from "clsx";
 
 interface MainPageProps {
   isSortSelected: boolean;
-  selectedSort: SortType | null;
+  selectedSort: SortTypes | null;
   onChangeCheckbox: (e: CheckboxChangeEvent) => void;
   onClickReset: () => void;
   onClickSubmit: () => void;
@@ -49,8 +49,8 @@ const MainPageComponent: FC<MainPageProps> = ({
               {t("mainPage.description") as string}
             </div>
             <div className="main-page-layout-content__sort-array">
-              {Object.entries(SortType).map(([key, value]) => {
-                const isChecked = !!selectedSort && selectedSort === key;
+              {Object.entries(SortTypes).map(([key, value]) => {
+                const isChecked = !!selectedSort && selectedSort === value;
                 return (
                   <ACheckbox
                     key={key}
@@ -61,11 +61,11 @@ const MainPageComponent: FC<MainPageProps> = ({
                       }
                     )}
                     checked={isChecked}
-                    disabled={!!selectedSort && selectedSort !== key}
-                    value={key}
+                    disabled={!!selectedSort && selectedSort !== value}
+                    value={value}
                     onChange={onChangeCheckbox}
                   >
-                    {t(`sort.${value}`) as string}
+                    {t(`sort.${value}.title`) as string}
                   </ACheckbox>
                 );
               })}

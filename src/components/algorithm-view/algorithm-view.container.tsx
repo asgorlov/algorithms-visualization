@@ -2,7 +2,7 @@ import React, { FC, useEffect } from "react";
 import AlgorithmViewComponent from "./algorithm-view.component";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  createArray,
+  createStripArray,
   selectStripArray
 } from "../../store/algorithm-view.slice";
 import {
@@ -10,30 +10,35 @@ import {
   selectShuffleButtonPushed,
   selectSortButtonPushed
 } from "../../store/controls.slice";
-import { RANDOM_SORT_ACTION } from "../../constants/common.consts";
+import { RANDOM_SORT_TYPE } from "../../constants/common.consts";
+import { selectSelectedSort } from "../../store/main-page.slice";
 
 const AlgorithmViewContainer: FC = () => {
   const dispatch = useDispatch();
 
   const stripArray = useSelector(selectStripArray);
+  const selectedSort = useSelector(selectSelectedSort);
   const stripArrayLength = useSelector(selectArrayLength);
   const isSortButtonPushed = useSelector(selectSortButtonPushed);
   const isShuffleButtonPushed = useSelector(selectShuffleButtonPushed);
 
   useEffect(() => {
-    dispatch(createArray(stripArrayLength));
+    dispatch(createStripArray(stripArrayLength));
   }, [dispatch, stripArrayLength]);
 
   useEffect(() => {
     if (isShuffleButtonPushed) {
-      dispatch({ type: RANDOM_SORT_ACTION });
+      // calling shuffle method in saga
+      dispatch({ type: RANDOM_SORT_TYPE });
     }
   }, [isShuffleButtonPushed, dispatch]);
 
   useEffect(() => {
     if (isSortButtonPushed) {
+      // calling selected sort method in saga
+      dispatch({ type: selectedSort });
     }
-  }, [isSortButtonPushed]);
+  }, [isSortButtonPushed, dispatch, selectedSort]);
 
   return <AlgorithmViewComponent stripArray={stripArray} />;
 };
