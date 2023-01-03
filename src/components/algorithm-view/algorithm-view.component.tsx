@@ -3,11 +3,12 @@ import { StripModel } from "../../models/strip.model";
 import StripComponent from "./strip/strip.component";
 import AlgorithmDescriptionComponent from "./algorithm-description/algorithm-description.component";
 import { SortTypes } from "../../constants/sort-type.enum";
+import { AnimationTimeModel } from "../../models/animation-time.model";
 
 interface AlgorithmViewProps {
   stripArray: StripModel[];
   selectedSort: SortTypes;
-  animationTime: number;
+  animationTime: AnimationTimeModel;
 }
 
 const AlgorithmViewComponent: FC<AlgorithmViewProps> = ({

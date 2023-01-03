@@ -44,8 +44,9 @@ const AlgorithmControlsContainer: FC = () => {
   }, [dispatch, length]);
 
   const handleClickBack = useCallback(() => {
-    dispatch(setIsSortSelected(false));
+    dispatch(setArrayLength(DEFAULT_STRIP_ARRAY_LENGTH));
     dispatch(setSelectedSort(null));
+    dispatch(setIsSortSelected(false));
     dispatch(savedAlgorithmData(null));
     dispatch(setSortButtonPushed(false));
     dispatch(setShuffleButtonPushed(false));

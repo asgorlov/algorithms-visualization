@@ -30,16 +30,28 @@ const AlgorithmViewContainer: FC = () => {
 
   const animationTime = useMemo(() => {
     if (isShuffleButtonPushed) {
-      // transition = 0,2s
-      return SHUFFLE_DELAY_IN_SECONDS / 5;
+      // whole shuffle process should not last more than 2s
+      const animationTime = SHUFFLE_DELAY_IN_SECONDS / stripArray.length;
+      return {
+        heightTime: Number(animationTime).toFixed(2),
+        backgroundTime: "0"
+      };
     } else if (isSortButtonPushed) {
-      // transition = chosen delay
-      return stepDelay;
+      // transition of one iteration = chosen delay
+      return {
+        heightTime: Number(stepDelay / 3).toFixed(1),
+        backgroundTime: Number((stepDelay * 2) / 3).toFixed(1)
+      };
     } else {
-      // transition = default sort step delay
-      return DEFAULT_SORT_STEP_DELAY_IN_SECONDS;
+      // transition of one iteration = default sort step delay
+      return {
+        heightTime: Number(DEFAULT_SORT_STEP_DELAY_IN_SECONDS / 3).toFixed(1),
+        backgroundTime: Number(
+          (DEFAULT_SORT_STEP_DELAY_IN_SECONDS * 2) / 3
+        ).toFixed(1)
+      };
     }
-  }, [isShuffleButtonPushed, isSortButtonPushed, stepDelay]);
+  }, [isShuffleButtonPushed, stripArray, isSortButtonPushed, stepDelay]);
 
   useEffect(() => {
     dispatch(createStripArray(stripArrayLength));
