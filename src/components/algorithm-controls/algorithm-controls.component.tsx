@@ -42,7 +42,7 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
   return (
     <div className="algorithm-controls">
       <div className="algorithm-controls__button-group">
-        <Popover content={t("button.back") as string}>
+        <Popover content={t<string>("button.back")}>
           <AButton
             className="algorithm-controls__button-group_back"
             onClick={onClickBack}
@@ -50,7 +50,7 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
             <ArrowLeftOutlined />
           </AButton>
         </Popover>
-        <Popover content={t("button.reset") as string}>
+        <Popover content={t<string>("button.reset")}>
           <AButton
             className="algorithm-controls__button-group_reset"
             disabled={isShuffleButtonPushed || isSortButtonPushed}
@@ -59,7 +59,7 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
             <RollbackOutlined />
           </AButton>
         </Popover>
-        <Popover content={t("button.shuffle") as string}>
+        <Popover content={t<string>("button.shuffle")}>
           <AButton
             className="algorithm-controls__button-group_shuffle"
             disabled={isSortButtonPushed}
@@ -72,7 +72,7 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
             )}
           </AButton>
         </Popover>
-        <Popover content={t("button.sort") as string}>
+        <Popover content={t<string>("button.sort")}>
           <AButton
             className="algorithm-controls__button-group_sort"
             disabled={isShuffleButtonPushed}
@@ -83,7 +83,7 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
         </Popover>
       </div>
       <div className="algorithm-controls__slider-group">
-        <Popover content={t("slider.length") as string}>
+        <Popover content={t<string>("slider.length")}>
           <div className="algorithm-controls__slider-group_length">
             <ASlider
               className="algorithm-controls__slider-group_length"
@@ -96,7 +96,7 @@ const AlgorithmControlsComponent: FC<AlgorithmControlsProps> = ({
             />
           </div>
         </Popover>
-        <Popover content={t("slider.delay") as string}>
+        <Popover content={t<string>("slider.delay")}>
           <div className="algorithm-controls__slider-group_delay">
             <ASlider
               className="algorithm-controls__slider-group_delay"

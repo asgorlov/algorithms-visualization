@@ -42,11 +42,11 @@ const MainPageComponent: FC<MainPageProps> = ({
       ) : (
         <Layout className="main-page-layout">
           <Header className="main-page-layout-header">
-            {t("mainPage.title") as string}
+            {t<string>("mainPage.title")}
           </Header>
           <Content className="main-page-layout-content">
             <div className={"main-page-layout-content__description"}>
-              {t("mainPage.description") as string}
+              {t<string>("mainPage.description")}
             </div>
             <div className="main-page-layout-content__sort-array">
               {Object.entries(SortTypes).map(([key, value]) => {
@@ -65,7 +65,7 @@ const MainPageComponent: FC<MainPageProps> = ({
                     value={value}
                     onChange={onChangeCheckbox}
                   >
-                    {t(`sort.${value}.title`) as string}
+                    {t<string>(`sort.${value}.title`)}
                   </ACheckbox>
                 );
               })}
@@ -78,14 +78,14 @@ const MainPageComponent: FC<MainPageProps> = ({
               onClick={onClickSubmit}
             >
               <CheckOutlined />
-              <span>{t("button.submit") as string}</span>
+              <span>{t<string>("button.submit")}</span>
             </AButton>
             <AButton
               className="main-page-layout-footer__btn-reset"
               onClick={onClickReset}
             >
               <DeleteOutlined />
-              <span>{t("button.reset") as string}</span>
+              <span>{t<string>("button.reset")}</span>
             </AButton>
           </Footer>
         </Layout>

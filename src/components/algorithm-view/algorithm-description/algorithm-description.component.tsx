@@ -16,35 +16,48 @@ const AlgorithmDescriptionComponent: FC<AlgorithmDescriptionComponentProps> = ({
   return (
     <div className="algorithm-view-description">
       <div className="algorithm-view-description_body">
-        <h3>{t("algorithmDescription.body.title") as string}</h3>
-        <span>
-          {t(`algorithmDescription.body.textSort.${selectedSort}`) as string}
-        </span>
+        <h3>{t<string>("algorithmDescription.body.title")}</h3>
+        <div className="algorithm-view-description_body-text">
+          <span>{t<string>(`sort.${selectedSort}.title`)}</span>
+          <span>
+            {t<string>(`algorithmDescription.body.textSort.${selectedSort}`)}
+          </span>
+        </div>
+        <div className="algorithm-view-description_body-link">
+          <span>{t<string>("algorithmDescription.body.details")}</span>
+          <a
+            href={t<string>(
+              `algorithmDescription.body.linkSort.${selectedSort}`
+            )}
+          >
+            {t<string>("algorithmDescription.body.linkText")}
+          </a>
+        </div>
       </div>
       <div className="algorithm-view-description_complexity">
-        <h3>{t("algorithmDescription.complexity.title") as string}</h3>
+        <h3>{t<string>("algorithmDescription.complexity.title")}</h3>
         <table>
           <tr>
             <th>
-              {t("algorithmDescription.complexity.rowTitle.average") as string}
+              {t<string>("algorithmDescription.complexity.rowTitle.average")}
             </th>
             <td>{complexity.average}</td>
           </tr>
           <tr>
             <th>
-              {t("algorithmDescription.complexity.rowTitle.best") as string}
+              {t<string>("algorithmDescription.complexity.rowTitle.best")}
             </th>
             <td>{complexity.best}</td>
           </tr>
           <tr>
             <th>
-              {t("algorithmDescription.complexity.rowTitle.worst") as string}
+              {t<string>("algorithmDescription.complexity.rowTitle.worst")}
             </th>
             <td>{complexity.worst}</td>
           </tr>
           <tr>
             <th>
-              {t("algorithmDescription.complexity.rowTitle.space") as string}
+              {t<string>("algorithmDescription.complexity.rowTitle.space")}
             </th>
             <td>{complexity.space}</td>
           </tr>

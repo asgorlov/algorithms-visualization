@@ -1,9 +1,11 @@
+@import "../constants/constants.less";
+
 .algorithm-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background: #f0f2f5;
+  background: @control-background-color;
 
   &__button-group {
     &_back,
@@ -32,7 +34,7 @@
     }
 
     .ant-slider-rail {
-      background-color: #1890ff;
+      background-color: @view-background-color;
     }
 
     .ant-slider-track {

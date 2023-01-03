@@ -24,28 +24,60 @@ i18n.use(initReactI18next).init({
         algorithmDescription: {
           body: {
             title: "Описание",
+            details: "Подробнее ",
+            linkText: "тут",
+            linkSort: {
+              quick:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%91%D1%8B%D1%81%D1%82%D1%80%D0%B0%D1%8F" +
+                "_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0",
+              merge:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" +
+                "_%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5%D0%BC",
+              heap:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%9F%D0%B8%D1%80%D0%B0%D0%BC%D0%B8%D0%B4%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F" +
+                "_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0",
+              bubble:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" +
+                "_%D0%BF%D1%83%D0%B7%D1%8B%D1%80%D1%8C%D0%BA%D0%BE%D0%BC",
+              selection:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" +
+                "_%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%BE%D0%BC",
+              insertion:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" +
+                "_%D0%B2%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0%D0%BC%D0%B8",
+              gnome:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%93%D0%BD%D0%BE%D0%BC%D1%8C%D1%8F" +
+                "_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0",
+              shaker:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%A1%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0" +
+                "_%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC",
+              oddEven:
+                "https://translated.turbopages.org/" +
+                "proxy_u/en-ru.ru.47b4b27f-63b427e3-52c392a4-74722d776562/" +
+                "https/en.wikipedia.org/wiki/Odd%E2%80%93even_sort",
+              pancake:
+                "https://ru.wikipedia.org/wiki/" +
+                "%D0%91%D0%BB%D0%B8%D0%BD%D0%BD%D0%B0%D1%8F" +
+                "_%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0"
+            },
             textSort: {
               quick:
-                "Быстрая сортировка - это алгоритм сортировки, " +
-                "основанный на разделении структуры данных на более мелкие " +
-                "разделы и их рекурсивной сортировке до тех пор, пока " +
-                "структура данных не будет отсортирована.\nЭто разделение на " +
-                "разделы выполняется на основе элемента, называемого " +
-                "пивотом(pivot): все элементы, большие, чем пивот, " +
-                "размещаются в правой части структуры, меньшие - слева, " +
-                "создавая два раздела. Затем эта процедура рекурсивно " +
-                "применяется к двум разделам и так далее.",
+                " -  это метод сортировки значений в списке в последовательные " +
+                "списки с помощью повторяющейся процедуры.",
               merge: "",
               heap: "",
               bubble:
-                "Пузырьковая сортировка - это итеративный алгоритм сортировки, " +
-                "который имитирует движение пузырьков в газированной воде. " +
-                "Пузырьки представляют элементы структуры данных.\nБольшие " +
-                "пузырьки достигают вершины быстрее, чем пузырьки поменьше, " +
-                "и этот алгоритм работает таким же образом. Он выполняет " +
-                "итерацию по структуре данных и для каждого цикла сжимает " +
-                "текущий элемент со следующим, меняя их местами, если они " +
-                "расположены в неправильном порядке.",
+                " - это простой алгоритм сортировки. Для понимания и реализации " +
+                "этот алгоритм - простейший, но эффективен он лишь для " +
+                "небольших массивов.",
               selection: "",
               insertion: "",
               gnome: "",
@@ -118,27 +150,31 @@ i18n.use(initReactI18next).init({
         algorithmDescription: {
           body: {
             title: "Description",
+            details: "Details ",
+            linkText: "here",
+            linkSort: {
+              quick: "https://en.wikipedia.org/wiki/Quicksort",
+              merge: "https://en.wikipedia.org/wiki/Merge_sort",
+              heap: "https://en.wikipedia.org/wiki/Heapsort",
+              bubble: "https://en.wikipedia.org/wiki/Bubble_sort",
+              selection: "https://en.wikipedia.org/wiki/Selection_sort",
+              insertion: "https://en.wikipedia.org/wiki/Insertion_sort",
+              gnome: "https://en.wikipedia.org/wiki/Gnome_sort",
+              shaker: "https://en.wikipedia.org/wiki/Cocktail_shaker_sort",
+              oddEven: "https://en.wikipedia.org/wiki/Odd%E2%80%93even_sort",
+              pancake: "https://en.wikipedia.org/wiki/Pancake_sorting"
+            },
             textSort: {
               quick:
-                "Quick Sort is a sorting algorithm based on splitting " +
-                "the data structure in smaller partitions and sort them " +
-                "recursively until the data structure is sorted.\nThis " +
-                "division in partitions is done based on an element, " +
-                "called pivot: all the elements bigger than the pivot get " +
-                "placed on the right side of the structure, the smaller ones " +
-                "to the left, creating two partitions. Next, this procedure " +
-                "gets applied recursively to the two partitions and so on.",
+                " is a sorting algorithm based on splitting the data " +
+                "structure in smaller partitions and sort them recursively " +
+                "until the data structure is sorted.",
               merge: "",
               heap: "",
               bubble:
-                "Bubble Sort is an iterative sorting algorithm that imitates " +
+                " is an iterative sorting algorithm that imitates " +
                 "the movement of bubbles in sparkling water. The bubbles " +
-                "represents the elements of the data structure.\nThe bigger " +
-                "bubbles reach the top faster than smaller bubbles, and this " +
-                "algorithm works in the same way. It iterates through the " +
-                "data structure and for each cycle compares the current " +
-                "element with the next one, swapping them if they are in " +
-                "the wrong order.",
+                "represents the elements of the data structure.",
               selection: "",
               insertion: "",
               gnome: "",
