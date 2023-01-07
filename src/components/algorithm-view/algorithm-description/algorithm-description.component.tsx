@@ -37,30 +37,32 @@ const AlgorithmDescriptionComponent: FC<AlgorithmDescriptionComponentProps> = ({
       <div className="algorithm-view-description_complexity">
         <h3>{t<string>("algorithmDescription.complexity.title")}</h3>
         <table>
-          <tr>
-            <th>
-              {t<string>("algorithmDescription.complexity.rowTitle.average")}
-            </th>
-            <td>{complexity.average}</td>
-          </tr>
-          <tr>
-            <th>
-              {t<string>("algorithmDescription.complexity.rowTitle.best")}
-            </th>
-            <td>{complexity.best}</td>
-          </tr>
-          <tr>
-            <th>
-              {t<string>("algorithmDescription.complexity.rowTitle.worst")}
-            </th>
-            <td>{complexity.worst}</td>
-          </tr>
-          <tr>
-            <th>
-              {t<string>("algorithmDescription.complexity.rowTitle.space")}
-            </th>
-            <td>{complexity.space}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>
+                {t<string>("algorithmDescription.complexity.rowTitle.average")}
+              </th>
+              <td>{complexity.average}</td>
+            </tr>
+            <tr>
+              <th>
+                {t<string>("algorithmDescription.complexity.rowTitle.best")}
+              </th>
+              <td>{complexity.best}</td>
+            </tr>
+            <tr>
+              <th>
+                {t<string>("algorithmDescription.complexity.rowTitle.worst")}
+              </th>
+              <td>{complexity.worst}</td>
+            </tr>
+            <tr>
+              <th>
+                {t<string>("algorithmDescription.complexity.rowTitle.space")}
+              </th>
+              <td>{complexity.space}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
